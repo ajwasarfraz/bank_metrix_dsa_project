@@ -1,0 +1,162 @@
+.btn-fill {
+    background: linear-gradient(90deg, #2563eb, #3b82f6); /* Professional Blue Gradient */
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-fill:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.3);
+}
+
+.btn-ghost {
+    background: transparent;
+    color: var(--text-main);
+    padding: 12px 28px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-ghost:hover {
+    background: var(--border);
+    border-color: var(--text-muted);
+}
+
+
+
+
+:root {
+    --primary: #2563eb;
+    --success: #10b981;
+    --danger: #ef4444;
+    --info: #06b6d4;
+    --purple: #8b5cf6;
+    --bg: #f8fafc;
+    --card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border: #e2e8f0;
+    --input-bg: #f8fafc;
+}
+
+[data-theme="dark"] {
+    --bg: #0f172a;
+    --card: #1e293b;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --border: #334155;
+    --input-bg: #0f172a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; transition: 0.3s; }
+body { background: var(--bg); color: var(--text-main); }
+
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 5%; background: var(--card); border-bottom: 1px solid var(--border); position: sticky; top: 0; z-index: 1000; }
+.logo { font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 8px; font-size: 1.25rem; }
+.nav-links { display: flex; list-style: none; gap: 1.5rem; }
+.nav-links li { font-size: 0.85rem; color: var(--text-muted); cursor: pointer; display: flex; align-items: center; gap: 6px; }
+.nav-links li.active { color: var(--primary); font-weight: 600; }
+.theme-toggle { cursor: pointer; padding: 8px; border-radius: 50%; border: 1px solid var(--border); background: var(--card); }
+
+.hero { display: flex; align-items: center; padding: 80px 8%; gap: 50px; max-width: 1400px; margin: 0 auto; }
+.hero-left h1 { font-size: 3.5rem; font-weight: 800; line-height: 1.1; margin: 20px 0; }
+.hero-left h1 span { color: var(--primary); }
+.hero-left p { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 30px; max-width: 500px; }
+.chip { background: #dbeafe; color: var(--primary); padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+
+
+/* Centering the Section Titles - Aligned with Hero text */
+.section-title {
+    text-align: left;
+    margin: 80px 0 40px 8%; 
+    font-size: 2.2rem;
+    font-weight: 800;
+    width: auto; 
+    display: block;
+}
+.dashboard-preview-window { background: var(--card); border-radius: 20px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.15); border: 1px solid var(--border); }
+.window-header-clean { height: 12px; }
+.window-body img { width: 100%; display: block; }
+
+.features-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 0 8% 80px; }
+.feat-card { background: var(--card); padding: 30px; border-radius: 16px; border: 1px solid var(--border); }
+.icon-bg { width: 45px; height: 45px; border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; margin-bottom: 15px; }
+.b-blue { background: var(--primary); } .b-cyan { background: var(--info); } .b-green { background: var(--success); } .b-purple { background: var(--purple); }
+
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 30px; }
+.stat-item { background: var(--card); padding: 25px; border-radius: 12px; border: 1px solid var(--border); position: relative; }
+.stat-item i { position: absolute; top: 25px; right: 25px; opacity: 0.8; }
+.dash-visuals { display: grid; grid-template-columns: 2fr 1fr; gap: 25px; }
+.chart-container, .activity-container { background: var(--card); padding: 25px; border-radius: 15px; border: 1px solid var(--border); }
+
+.form-wrapper { display: flex; justify-content: center; padding: 60px 0; }
+.form-card { background: var(--card); width: 450px; padding: 40px; border-radius: 24px; border: 1px solid var(--border); box-shadow: 0 10px 40px rgba(0,0,0,0.05); }
+.form-header { display: flex; align-items: center; gap: 12px; font-size: 1.5rem; font-weight: 700; margin-bottom: 30px; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px; }
+.form-group input, .form-group select { width: 100%; padding: 12px; border-radius: 10px; border: 1px solid var(--border); background: var(--input-bg); color: var(--text-main); }
+.btn-submit { width: 100%; padding: 15px; border-radius: 10px; border: none; color: white; font-weight: 700; cursor: pointer; margin-top: 10px; }
+
+.table-container { background: var(--card); border-radius: 12px; border: 1px solid var(--border); overflow: hidden; }
+table { width: 100%; border-collapse: collapse; }
+th { background: var(--bg); padding: 16px; text-align: left; font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); border-bottom: 1px solid var(--border); }
+td { padding: 16px; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
+
+.view { display: none; } .view.active { display: block; }
+.t-red { color: var(--danger); } .t-cyan { color: var(--info); } .t-blue { color: var(--primary); } .t-green { color: var(--success); }
+
+
+/* Aligning Page Headings to the left (Accounts & Dashboard) */
+#accounts .section-title, 
+#dashboard .section-title {
+    text-align: left; 
+    padding-left: 8%; /* Matches the Hero and Navbar alignment */
+    margin: 40px 0 20px 0; 
+    font-size: 2rem;
+    font-weight: 800;
+    width: 100%;
+    display: block;
+}
+
+/* Ensuring Dashboard stats also stay aligned */
+.stats-grid, .dash-visuals {
+    padding: 0 8% 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+/* Ensuring the Accounts table stays aligned */
+#accounts > div {
+    padding: 2rem 8% !important; /* Forces the table container to align with the text */
+}
+
+
+/* Specifically Target the Accounts Page Title and Container */
+#accounts .section-title {
+    text-align: left !important;
+    padding-left: 8% !important; /* Matches the exact hero alignment */
+    margin: 40px 0 20px 0 !important;
+    width: 100%;
+}
+
+/* Aligning the Table Container to the same line */
+#accounts .table-container {
+    margin-left: 8% !important;
+    margin-right: 8% !important;
+    width: auto !important;
+}
+
+/* Removing any extra padding from the parent div of the accounts page */
+#accounts > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}

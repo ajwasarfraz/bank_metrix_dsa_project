@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BankMetrix - Smart Digital Banking</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo"><i data-lucide="landmark"></i> BankMetrix</div>
+        <ul class="nav-links">
+            <li class="active" id="nav-home" onclick="navigateTo('home')"><i data-lucide="home"></i> Home</li>
+            <li id="nav-create" onclick="navigateTo('create')"><i data-lucide="user-plus"></i> Create</li>
+            <li id="nav-deposit" onclick="navigateTo('deposit')"><i data-lucide="arrow-down-circle"></i> Deposit</li>
+            <li id="nav-withdraw" onclick="navigateTo('withdraw')"><i data-lucide="minus-circle"></i> Withdraw</li>
+            <li id="nav-transfer" onclick="navigateTo('transfer')"><i data-lucide="repeat"></i> Transfer</li>
+            <li id="nav-accounts" onclick="navigateTo('accounts')"><i data-lucide="users"></i> Accounts</li>
+            <li id="nav-dashboard" onclick="navigateTo('dashboard')"><i data-lucide="layout-dashboard"></i> Dashboard</li>
+        </ul>
+        <div class="theme-toggle" onclick="toggleDarkMode()">
+            <i data-lucide="moon" id="theme-icon"></i>
+        </div>
+    </nav>
+
+    <main id="app">
+        <section id="home" class="view active">
+            <div class="hero">
+                <div class="hero-left">
+                    <span class="chip"> Smart Digital Banking</span>
+                    <h1>BankMetrix – <span>Smart Digital Banking System</span></h1>
+                    <p>A smart digital banking simulation platform built to manage accounts, transactions, and financial activities efficiently.</p>
+                    <div class="cta-group">
+    <button class="btn-fill" onclick="navigateTo('create')">Create Account →</button>
+    
+    <button class="btn-ghost" onclick="navigateTo('accounts')">View Accounts</button>
+</div>
+                </div>
+                <div class="hero-right">
+                    <div class="dashboard-preview-window">
+                        <div class="window-header-clean"></div>
+                        <div class="window-body">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=1000" alt="Dashboard UI">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="section-title">Powerful Banking Features</h2>
+            <div class="features-row">
+                <div class="feat-card"><div class="icon-bg b-blue"><i data-lucide="credit-card"></i></div><h3>Account Management</h3><p>Create and manage Savings & Current accounts with ease.</p></div>
+                <div class="feat-card"><div class="icon-bg b-cyan"><i data-lucide="zap"></i></div><h3>Instant Transfers</h3><p>Transfer funds between accounts in real-time.</p></div>
+                <div class="feat-card"><div class="icon-bg b-green"><i data-lucide="shield-check"></i></div><h3>Secure Permissions</h3><p>Role-based access control for financial activities.</p></div>
+                <div class="feat-card"><div class="icon-bg b-purple"><i data-lucide="bar-chart-3"></i></div><h3>Analytics Dashboard</h3><p>Track your total balance and activities at a glance.</p></div>
+            </div>
+        </section>
+
+        <section id="form-view" class="view">
+            <div class="form-wrapper">
+                <div class="form-card">
+                    <div class="form-header" id="dynamic-header"></div>
+                    <div id="form-inputs"></div>
+                    <button class="btn-submit" id="submit-btn" onclick="processAction()">Confirm</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="dashboard" class="view">
+            <h2 class="section-title" style="text-align: left; padding: 0 4rem;">Dashboard Analytics</h2>
+            <div class="stats-grid" style="padding: 0 4rem;">
+                <div class="stat-item"><span>Total Accounts</span><h3 id="dash-acc-count">0</h3><i data-lucide="users" class="t-blue"></i></div>
+                <div class="stat-item"><span>Total Balance</span><h3 id="dash-total-bal">Rs. 0</h3><i data-lucide="wallet" class="t-cyan"></i></div>
+                <div class="stat-item"><span>Total Deposits</span><h3 id="dash-total-dep">Rs. 0</h3><i data-lucide="trending-up" class="t-green"></i></div>
+                <div class="stat-item"><span>Total Withdrawals</span><h3 id="dash-total-wit">Rs. 0</h3><i data-lucide="trending-down" class="t-red"></i></div>
+            </div>
+            <div class="dash-visuals" style="padding: 0 4rem 4rem;">
+                <div class="chart-container"><h4>Monthly Overview</h4><canvas id="balanceChart"></canvas></div>
+                <div class="activity-container"><h4>Recent Activity</h4><ul id="activity-list"></ul></div>
+            </div>
+        </section>
+
+        <section id="accounts" class="view">
+            <div style="padding: 2rem 4rem;">
+                <h2 class="section-title" style="text-align: left; margin-bottom: 1rem;">All Accounts</h2>
+                <div class="table-container">
+                    <table>
+                        <thead><tr><th>ID</th><th>Name</th><th>Balance</th><th>Type</th></tr></thead>
+                        <tbody id="acc-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
